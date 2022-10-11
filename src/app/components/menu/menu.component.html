@@ -1,0 +1,32 @@
+<div class="menu-item">
+    <div class="menu-item-label">Array Size</div>
+    <div>{{app.menu.numBars}}</div>
+    <div class="button-panel">
+        <div [style.visibility]="app.menu.numBars-10 >= app.menu.minNumBars ? '':'hidden'"
+            (click)="app.setNumBars(app.menu.numBars-10)">-10</div>
+        <div [style.visibility]="app.menu.numBars-1 >= app.menu.minNumBars ? '':'hidden'"
+            (click)="app.setNumBars(app.menu.numBars-1)">-</div>
+        <div [style.visibility]="app.menu.numBars+1 <= app.menu.maxNumBars ? '':'hidden'"
+            (click)="app.setNumBars(app.menu.numBars+1)">+</div>
+        <div [style.visibility]="app.menu.numBars+10 <= app.menu.maxNumBars ? '':'hidden'"
+            (click)="app.setNumBars(app.menu.numBars+10)">+10</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="menu-item-label">Sorting Speed</div>
+    <div>{{app.menu.numComps}} steps / sec</div>
+    <div class="button-panel">
+        <div [style.visibility]="app.menu.numComps-10 >= app.menu.minNumComps ? '':'hidden'"
+            (click)="app.setNumComps(app.menu.numComps-10)">-10</div>
+        <div [style.visibility]="app.menu.numComps-1 >= app.menu.minNumComps ? '':'hidden'"
+            (click)="app.setNumComps(app.menu.numComps-1)">-</div>
+        <div [style.visibility]="app.menu.numComps+1 <= app.menu.maxNumComps ? '':'hidden'"
+            (click)="app.setNumComps(app.menu.numComps+1)">+</div>
+        <div [style.visibility]="app.menu.numComps+10 <= app.menu.maxNumComps ? '':'hidden'"
+            (click)="app.setNumComps(app.menu.numComps+10)">+10</div>
+    </div>
+</div>
+<div class="menu-item">
+    <div class="menu-item-label">Sorting Algorithm</div>
+    <div class="menu-selector" (click)="app.changeSortingAlgorithm()">{{app.getSortingAlgorithm()}}</div>
+</div>

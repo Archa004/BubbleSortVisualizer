@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+:root{
+    --color-background : #262626; 
+    --color-foreground-1 : #181818; 
+    --color-foreground-2 : #202020;
+    --color-text : #EFEFEF;
+    --font-heading: clamp(1.1rem,2vw,1.5rem) 'Archivo Black', sans-serif;
+}
+
+body,html {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    overflow-y: hidden;
+}
+
+
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.bottom-container{
+    flex: 1 0 auto;
+    position: relative;
+}
+
+.menu{
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    height: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0px;
+    background-color: var(--color-foreground-1);
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.menu-item{
+    background-color: var(--color-background);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 0 0 max(90px,20%);
+    width: min(600px,80%);
+    font-size: clamp(0.8rem,1.3vw,1rem);
+}
+
+.menu-item .menu-item-label{
+    font-size: clamp(0.8rem,1.5vw,1.2rem);
+}
+
+
+.menu-item .button-panel{
+    display: flex;
+}
+
+.menu-item .button-panel *{
+    margin: 0;
+    width: clamp(3.2rem,2.5vw,3rem);
+    height: clamp(2rem,2.3vw,2.9rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-foreground-2);
+    margin-right: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 30ms linear;
+}
+
+.menu-item .button-panel *:active{
+    transform: scale(0.9);
+    transition: all 30ms 'linear';
+}
+
+.menu-selector{
+    width: min(20rem,60%);
+    border-radius: 5px;
+    padding:clamp(0.6rem,2vw,1rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-foreground-2);
+    cursor: pointer;
+    transition: all 30ms linear;
+}
+
+.menu-selector:active{
+    transform: scale(0.9);
+    transition: all 30ms 'linear';
+}
+
+.menu-item .button-panel :last-child{
+    margin-right: 0px;
+}
+
+.header{
+    display: flex;
+    flex: 0 1 auto;
+    align-items: center;
+    background-color: var(--color-foreground-1);
+    padding: clamp(0.8rem,1vw,1.5rem);
+    font: var(--font-heading);
+}
+
+.header .icon{
+    cursor: pointer;
+    background-color: var(--color-foreground-2);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: all 100ms linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .click-icon:active{
+    transform: scale(0.8);
+    transition: all 100ms 'linear';
+}
+
+.header .separator{
+    flex-grow: 1;
+}
+
+.bar-panel{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+}
+
+.bar{
+    flex: 1 1 auto;
+    max-width: 80px;
+    border-left: 1px solid var(--color-background);
+    border-right: 1px solid var(--color-background);
+}
+
+.bar-unprocessed{
+    background-color: #E5E7E6;
+}
+
+.bar-processing{
+    background-color: #AEDCC0;
+}
+
+.bar-processed{
+    background-color: #2374AB;
+}
